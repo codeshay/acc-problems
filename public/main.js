@@ -17,7 +17,7 @@ function test() {
 
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 1
 ----------------------------------------
 
 Write function named sum that will take an array of numbers and return the sum of them.
@@ -30,17 +30,26 @@ For example, the tests require that to complete this challenge, your function mu
 results on the index page in the browser.
 */
 
+function sum(arr) {
+//     let total = 0;
+//     if(arr.length==0){
+//         return total;
+//     }
+//     for(let i = 0; i <= arr.length - 1; i++){
+//         total += arr.valueOf(i);
+//     }
+//     return total;
+// }
 
-
-
-
-
-
-
+    if(arr.length==0){
+        return 0;
+    }
+    return arr.reduce((acc,curr)=> acc + curr);
+}
 
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 2
 ----------------------------------------
 
 Write function named doubleLetters that will take a string and double every letter in the string
@@ -48,18 +57,19 @@ Write function named doubleLetters that will take a string and double every lett
 Example: if you pass it "abc" then it should return "aabbcc"
 */
 
+function doubleLetters(str){
+    let doubled = "";
 
+    for(let i = 0; i < str.length; i++){
+        doubled += (str.charAt(i) + str.charAt(i));
+    }
 
-
-
-
-
-
-
+    return doubled;
+}
 
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 3
 ----------------------------------------
 
 Write function named doubleNumbers that will take an array of numbers and return an array with those numbers doubled
@@ -67,17 +77,23 @@ Write function named doubleNumbers that will take an array of numbers and return
 Example: if you pass it [1,2,3] then it should return [2,4,6]
 */
 
+function doubleNumbers(arr){
+    let doubled = [];
 
+    if(arr.length==0){
+        return doubled;
+    }
 
-
-
-
-
-
+    for(let i = 0; i < arr.length; i++) {
+        doubled += (arr[i] * 2);
+    }
+    
+    return doubled;
+}
 
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 4
 ----------------------------------------
 
 Write function named multiplyNumbers that will take an array of numbers and
@@ -89,18 +105,14 @@ Examples:
 - if you call multiplyNumbers([1,2,3], 5) you'd get [5,10,15]
 */
 
+function multiplyNumbers(arr, num) {
 
-
-
-
-
-
-
+}
 
 
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 5
 ----------------------------------------
 
 Write function named interleave that will take two arrays and interleaves them
@@ -111,18 +123,9 @@ NOTE: you can assume each input will be the same length
 */
 
 
-
-
-
-
-
-
-
-
-
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 6
 ----------------------------------------
 
 Write function named createRange that will take a number and a default value and return an array of that many values
@@ -131,15 +134,9 @@ Example: if you pass it 4 and "Hello" then it should return ["Hello", "Hello", "
 */
 
 
-
-
-
-
-
-
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 7
 ----------------------------------------
 
 Write function named flipArray that will take an array and return an object where the keys are the items and the values are the indices
@@ -149,16 +146,9 @@ Example:
 If you pass it ["quick", "brown", "fox"] then it should return { "quick": 0, "brown": 1, "fox": 2 }
 */
 
-
-
-
-
-
-
-
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 8
 ----------------------------------------
 
 Write function named arraysToObject that will take an array of 2-element arrays, and return an object of key/value pairs
@@ -170,16 +160,9 @@ If you pass it [[2014, "Horse"], [2015, "Sheep"]] then it should return { 2014: 
 */
 
 
-
-
-
-
-
-
-
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 9
 ----------------------------------------
 
 Write function named reverseString that will reverse a string without calling the built-in .split or .reverse methods
@@ -189,20 +172,19 @@ Example:
 If you pass it "hello" then it should return "olleh"
 */
 
+function reverseString(str) {
+    let reversed = "";
 
+    for(let i = str.length-1; i >= 0; i--){
+        reversed += str.charAt(i);
+    }
 
-
-
-
-
-
-
-
-
+    return reversed;
+}
 
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 10
 ----------------------------------------
 
 Write a function named repeats that returns true if the first half of the string equals the last half, and false if not
@@ -214,16 +196,25 @@ If you pass it "yay" then it should return false because it's odd
 If you pass it "heehaw" then it should return false because "hee" doesn't equal "haw"
 */
 
+function repeats(str){
+    let half = (str.length/2);
 
+    if(str.length%2==1){
+        return false;
+    }
 
+    for(let i = 0; i < half; i++){
+        if(str.charAt(i)!=str.charAt(i+half)) {
+            return false;
+        }
+    }
 
-
-
-
+    return true;
+}
 
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 11
 ----------------------------------------
 
 Write a function named everyOther that returns every other character in the string
@@ -233,16 +224,22 @@ Example:
 If you pass it "abcdef" then it should return "ace" because those represent every other letter
 */
 
+function everyOther(str){
+    let everyOtherChar = "";
 
+    if(str==""){
+        return everyOtherChar;
+    }
+    for(let i = 0; i < str.length; i+2){
+        everyOtherChar += str.charAt(i);
+    }
 
-
-
-
-
+    return everyOtherChar;
+}
 
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 12
 ----------------------------------------
 
 Write a function named allEqual that returns true if every character in the string is the same
@@ -253,16 +250,21 @@ If you pass "aaa" it should return true
 If you pass "aba" it should return false
 */
 
+function allEqual(str){
+    let letter = str.charAt(i);
 
-
-
-
-
+    for(let i = 1; i < str.length; i++){
+        if(str.charAt(i)!=letter){
+            return false;
+        }
+    }
+    return true;
+}
 
 
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 13
 ----------------------------------------
 
 Write a function named sumLetters that returns the sum of every character in the string
@@ -273,16 +275,19 @@ If you pass "45" it should return 9
 If you pass "246" it should return 12
 */
 
+function sumLetters(str){
+    let total = 0;
 
-
-
-
-
+    for(let i = 0; i < str.length; i++){
+        total += parseInt(str.charAt(i));
+    }
+    return total;
+}
 
 
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 14
 ----------------------------------------
 
 Write a function named countVowels that returns the number of vowels in a string, excluding "y"
@@ -292,18 +297,21 @@ Example:
 If you pass "you" it should return 2
 */
 
+function countVowels(str){
+    let count = 0;
 
-
-
-
-
-
-
-
+    for(let i = 0; i < str.length; i++) {
+        let current = str.charAt(i).toLowerCase;
+        if(current =='a' || current=='e' || current=='i' || current=='o' || current=='u'){
+            count++;
+        }
+    }
+    return count;
+}
 
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 15
 ----------------------------------------
 
 Write a function named split that takes a string and returns an array of the letters
@@ -317,14 +325,9 @@ NOTE: do not use the builtin `split` method
 
 
 
-
-
-
-
-
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 16
 ----------------------------------------
 
 Write a function named getCodePoints that takes a string and returns an array of the codePoints of the letters
@@ -338,14 +341,9 @@ If you pass "Hello" it should return [ 72, 101, 108, 108, 111 ]
 
 
 
-
-
-
-
-
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 17
 ----------------------------------------
 
 Write a function named letterMap that takes a string and returns an object of the letters and their positions in the string
@@ -358,14 +356,9 @@ If you pass "Hello" it should return {H: 0, e: 1, l: 3, o: 4}
 
 
 
-
-
-
-
-
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 18
 ----------------------------------------
 
 Write a function named letterCount that takes a string and returns an object with the letters and the number of their occurrences
@@ -378,15 +371,9 @@ If you pass "Hello" it should return {"H": 1, "e": 1, "l": 2, "o": 1}
 
 
 
-
-
-
-
-
-
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 19
 ----------------------------------------
 
 Write a function named threeOdds that takes 2 numbers and returns true if there are 3 odd numbers _between_ those two numbers
@@ -399,16 +386,9 @@ If you pass 0,6 it should return true because between 0 and six (the numbers 1,2
 
 
 
-
-
-
-
-
-
-
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 20
 ----------------------------------------
 
 Write a function called leftPad that takes a string, a length and a fill character and returns a string padded to length with the fill character
@@ -420,14 +400,9 @@ If you pass "a", 3, "*" it should return "**a" - that is, a string of length 3, 
 
 
 
-
-
-
-
-
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 21
 ----------------------------------------
 
 Write a function named createString that takes a number and a letter and creates a string of that many letters
@@ -440,14 +415,9 @@ If you pass "b", 3 it should return "bb"
 
 
 
-
-
-
-
-
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 22
 ----------------------------------------
 
 Write a function named factorial that takes a number and returns its factorial
@@ -462,14 +432,9 @@ If you pass 5 it should return 120 since that's 5 * 4 * 3 * 2 * 1
 
 
 
-
-
-
-
-
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 23
 ----------------------------------------
 
 Write a function named arrayOfNumbers that takes a number and returns an array of all the numbers between 1 and that number, inclusive
@@ -482,14 +447,9 @@ If you pass 3 it should return [1,2,3]
 
 
 
-
-
-
-
-
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 24
 ----------------------------------------
 
 Write a function named evenOdd that takes a number and returns an object with the numbers and whether they are even or odd
@@ -501,15 +461,9 @@ If you pass 1,4 it should return {"1": "odd", "2": "even", "3": "odd", "4": "eve
 
 
 
-
-
-
-
-
-
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 25
 ----------------------------------------
 
 Write a function named growingKeys that takes a number and a string and returns an object where the keys are that string, repeated one more each time
@@ -521,16 +475,9 @@ If you pass 2,"d" it should return {"d": true, "dd": true}
 
 
 
-
-
-
-
-
-
-
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 26
 ----------------------------------------
 
 Write a function named every that takes an array and a value and returns true if every element of the array equals the value
@@ -543,14 +490,9 @@ If you pass [1,2], 1 it should return false
 
 
 
-
-
-
-
-
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 27
 ----------------------------------------
 
 Write a function named some that takes an array and a value and returns true if at least one element of the array equals the value
@@ -563,14 +505,9 @@ If you pass [3,2], 1 it should return false
 
 
 
-
-
-
-
-
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 28
 ----------------------------------------
 
 Write a function named some that takes an array and returns a string with the elements joined by commas, with a trailing 'and'
@@ -583,19 +520,9 @@ If you pass ["Sue", "Will", "Rachel"] it should return "Sue, Will and Rachel"
 
 
 
-
-
-
-
-
-
-
-
-
-
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 29
 ----------------------------------------
 
 Write a function named acronym that takes an array and returns a string that is an acronym of the items in the array
@@ -608,14 +535,9 @@ If you pass ["Java", Script", "Object", "Notation"] it should return "JSON"
 
 
 
-
-
-
-
-
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 30
 ----------------------------------------
 
 Write a function named min that takes an array and returns minimum value of the array
@@ -627,17 +549,9 @@ If you pass [0,-3,2,5] it should return -3
 
 
 
-
-
-
-
-
-
-
-
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 31
 ----------------------------------------
 
 Write a function named index that takes an array of objects, and a property name, and returns an object where the keys are the specified property
@@ -645,19 +559,13 @@ Write a function named index that takes an array of objects, and a property name
 Example:
 
 If you pass [{id: 1, name: "Joe"}, {id: 2, name: "Sue"}] it should return {1: {id: 1, name: "Joe"}, 2: {id: 2, name: "Sue"}}
-
 */
-
-
-
-
-
 
 
 
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 32
 ----------------------------------------
 
 Write a function named invert that takes an object and returns an object where the keys and values have been inverted
@@ -669,14 +577,9 @@ If you pass {id: 1, name: "Joe"} it should return {1: "id", Joe: "name"}
 
 
 
-
-
-
-
-
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 33
 ----------------------------------------
 
 Write a function named addSignature that takes an object and a name, and returns an object where
@@ -691,14 +594,9 @@ If you pass {"contract": "foo"}, "Fred" it should return {"contract-signed": "fo
 
 
 
-
-
-
-
-
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 34
 ----------------------------------------
 
 Write a function named pairs that takes an object and returns an array of strings of key/value pairs
@@ -710,14 +608,9 @@ If you pass {name: "Will", age: 24} it should return ["name - will", "age - 24"]
 
 
 
-
-
-
-
-
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 35
 ----------------------------------------
 
 Write a function named sumValues that takes an object and returns the sum of the values
@@ -729,14 +622,9 @@ If you pass {a: 1, b: 2} it should return 3
 
 
 
-
-
-
-
-
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 36
 ----------------------------------------
 
 Write a function named biggestProperty that takes an object and returns the name of the property with the highest value
@@ -748,20 +636,9 @@ If you pass {1999: 4036, 2000: 7654} it should return '2000'
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 37
 ----------------------------------------
 
 Write a function named keyForValue that takes an object and a value and returns the name of the property that matches that value
@@ -773,16 +650,9 @@ If you pass {1999: 4036, 2000: 7654} and 4036, it should return '1999'
 
 
 
-
-
-
-
-
-
-
 /*
 ----------------------------------------
-CHALLENGE
+CHALLENGE 38
 ----------------------------------------
 
 Write a function named containsValue that takes an object and a value and returns true if the object contains the value
@@ -791,12 +661,6 @@ Example:
 
 If you pass {1999: 4036, 2000: 7654} and 4036, it should return true
 */
-
-
-
-
-
-
 
 
 
